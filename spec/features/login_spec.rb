@@ -73,6 +73,12 @@ describe 'password authentication' do
       expect(page).
           to have_content 'Вход не выполнен. Проверте вводимые E-mail и Пароль.'
     end
+
+    it 'already authenticated' do
+      login('test@test.com', '12345', 'Войти')
+      visit new_user_session_path
+      expect(current_path).to eq(root_path)
+    end
   end
 
   describe 'change language' do
@@ -105,7 +111,7 @@ describe 'password authentication' do
       fill_in 'user[password]', with: '12345'
       fill_in 'user[password_confirmation]', with: '12345'
       click_button 'Сохранить'
-      expect(page).to have_content 'Профиль пользователя успешно обновлен.'
+      expect(page).to have_content "User profile successfully updated."
     end
 
     it 'authentication TRUE' do
@@ -114,5 +120,9 @@ describe 'password authentication' do
       login('test@test.com', '12345', 'Log in')
       expect(page).to have_content 'Login is successful.'
     end
+  end
+
+  describe 'change password' do
+    before
   end
 end

@@ -185,4 +185,22 @@ describe Card do
     check_result = card.check_translation('RoR')
     expect(check_result[:state]).to be false
   end
+
+  describe '.pending_cards_notification' do
+    let(:user1) { create(:user_with_one_block_and_one_card) }
+    let(:user2) { create(:user_with_one_block_and_one_card, email: 'another@mail.com') }
+
+    before do
+
+      user1.cards.first.update(review_date: Time.zone.now - 100)
+      user2.cards.first.update(review_date: Time.zone.now + 100)
+    end
+
+    it 'deliver' do
+      expect(CardsMailer).to receive(:pending_cards_notification).with(user1.email).and_call_original
+      expect(CardsMailer).not_to receive(:pending_cards_notification).with(user2.email).and_call_original
+
+      Card.pending_cards_notification
+    end
+  end
 end

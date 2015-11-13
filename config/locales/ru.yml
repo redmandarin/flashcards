@@ -36,6 +36,24 @@ ru:
   log_out_is_successful_notice: 'Выход выполнен успешно.'
   log_out_failed_provider_alert: "Вход из аккаунта %{provider.titleize} не выполнен ."
   please_log_in: 'Пожалуйста авторизуйтесь.'
+  locales:
+    choose: 'Выберите локаль из выпадающего списка.'
+  profile_is_succesfuly_updated: 'Профиль пользователя успешно обновлен.'
+  user_success_deletion: 'Пользователь успешно удален.'
+  showing_values_must_be_differed: 'Вводимые значения должны отличаться.'
+
+  block:
+    actions:
+      make_ordinary: "Сделать обычной"
+      edit: "Редактировать"
+      make_current: "Сделать текущей"
+      destroy: "Удалить"
+
+  card:
+    actions:
+      edit: "Редактировать"
+      destroy: "Удалить"
+      are_you_sure: "Удалить запись?"
 
   activerecord:
     errors:
@@ -45,3 +63,20 @@ ru:
         confirmation: 'Значения не совпадают.'
         taken: 'Не уникальное значение.'
         invalid: 'Не верный формат.'
+      models:
+        block:
+          attributes:
+            title:
+              blank: 'Необходимо заполнить поле.'
+        card:
+          attributes:
+            original_text:
+              blank: 'Необходимо заполнить поле.'
+            translated_text:
+              blank: 'Необходимо заполнить поле.'
+            review_date:
+              blank: 'Необходимо заполнить поле.'
+            block_id:
+              blank: 'Выберите колоду из выпадающего списка.'
+            user_id:
+              blank: 'Ошибка ассоциации.'

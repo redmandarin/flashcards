@@ -36,6 +36,24 @@ en:
   log_out_is_successful_notice: 'Log out is successful.'
   log_out_failed_provider_alert: "Log out of your account %{provider} failed."
   please_log_in: 'Please log in.'
+  locales:
+    choose: 'Choose locale.'
+  profile_is_succesfuly_updated: 'User profile successfully updated.'
+  user_success_deletion: 'User successfully deleted.'
+  showing_values_must_be_differed: 'The input valued must be different'
+
+  block:
+    actions:
+      make_ordinary: "Make ordinary"
+      edit: "Edit"
+      make_current: "Make current"
+      destroy: "Delete"
+
+  card:
+    actions:
+      edit: "Edit"
+      destroy: "Delete"
+      are_you_sure: "Delete record?"
 
   activerecord:
       errors:
@@ -44,3 +62,20 @@ en:
           too_short: 'Short value.'
           confirmation: 'Values do not match.'
           taken: 'Not a unique value.'
+        models:
+          block:
+            attributes:
+              title:
+                blank: 'Необходимо заполнить поле.'
+          card:
+            attributes:
+              original_text:
+                blank: 'Fill out the field.'
+              translated_text:
+                blank: 'Fill out the field.'
+              review_date:
+                blank: 'Fill out the field.'
+              block_id:
+                blank: 'Choose card from list.'
+              user_id:
+                blank: 'Wrong association'

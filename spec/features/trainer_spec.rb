@@ -14,6 +14,19 @@ describe 'review cards without blocks' do
       expect(page).to have_content 'Ожидайте наступления даты пересмотра.'
     end
   end
+
+  describe 'card does not exist' do
+    before do
+      @user = create(:user)
+      visit trainer_path
+      login('test@test.com', '12345', 'Войти')
+    end
+
+    it 'rescue an error' do
+      visit edit_card_path(-1)
+      expect(page).to have_content I18n.t(:not_found_alert)
+    end
+  end
 end
 
 describe 'review cards with one block' do

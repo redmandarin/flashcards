@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 ruby '2.2.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.1'
+gem 'rails', '4.2.7.1'
 # Use postgresql as the database for Active Record
 gem 'pg'
 gem 'sass-rails', '~> 4.0.3'
@@ -34,6 +34,9 @@ gem 'newrelic_rpm'
 gem 'responders', '~> 2.0'
 gem 'puma'
 gem 'codeclimate-test-reporter', group: :test, require: nil
+gem 'rails_admin'
+gem 'rails_admin-i18n'
+gem 'pundit'
 
 group :development, :test do
   gem 'rspec-rails'

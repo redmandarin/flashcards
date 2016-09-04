@@ -9,9 +9,7 @@
   </thead>
   <tbody>
   <% @cards.each do |card| %>
-    <tr class="table table-hover table-condensed">
-      <%= cart_item(cart) %>
-    </tr>
+    <%= card_item(card) %>
   <% end %>
   </tbody>
 </table>
